@@ -5,7 +5,7 @@ class Ship(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
         self.image = pygame.image.load("Spaceship.png")
-        self.image = pygame.transform.smoothscale(self.image, (40,40))
+        self.image = pygame.transform.smoothscale(self.image, (40, 40))
         self.image = pygame.transform.rotate(self.image, 0)
         self.rect = self.image.get_rect()
         self.rect.center = pos
@@ -14,7 +14,7 @@ class Ship(pygame.sprite.Sprite):
     def update(self):
         self.rect.move_ip(self.speed)
 
-    def checkRest(self, endPos):
+    def checkReset(self, endPos):
         return self.rect.center[0] > endPos
 
     def reset(self, pos):
